@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   const menuItems = [
     { icon: Home, label: "Dashboard", path: "/" },
-    { icon: Users, label: "AI Agents", path: "/agents" },
-    { icon: Settings, label: "Settings", path: "/settings" },
+    { icon: Users, label: "Agentes IA", path: "/agents" },
+    { icon: Settings, label: "Configurações", path: "/settings" },
   ];
 
   return (
@@ -16,7 +16,7 @@ const Sidebar = () => {
       
       <button className="flex items-center gap-2 bg-primary hover:bg-accent transition-colors duration-200 text-white px-4 py-2 rounded-lg mb-8">
         <PlusCircle size={20} />
-        <span>New Agent</span>
+        <span>Novo Agente</span>
       </button>
 
       <nav className="flex-1">

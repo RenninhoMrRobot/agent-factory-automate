@@ -6,21 +6,21 @@ const Index = () => {
   const stats = [
     {
       icon: Bot,
-      label: "Active Agents",
+      label: "Agentes Ativos",
       value: "5",
-      change: "+2 this week",
+      change: "+2 esta semana",
     },
     {
       icon: Activity,
-      label: "Tasks Completed",
+      label: "Tarefas Concluídas",
       value: "128",
-      change: "+23 today",
+      change: "+23 hoje",
     },
     {
       icon: Clock,
-      label: "Hours Saved",
+      label: "Horas Economizadas",
       value: "47",
-      change: "+5 this week",
+      change: "+5 esta semana",
     },
   ];
 
@@ -28,8 +28,8 @@ const Index = () => {
     <Layout>
       <div className="space-y-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Welcome back!</h1>
-          <p className="text-gray-600 mt-2">Here's what's happening with your AI agents.</p>
+          <h1 className="text-3xl font-bold text-gray-900">Bem-vindo de volta!</h1>
+          <p className="text-gray-600 mt-2">Aqui está o que está acontecendo com seus agentes IA.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -48,9 +48,9 @@ const Index = () => {
         </div>
 
         <Card className="p-6">
-          <h2 className="text-xl font-semibold mb-4">Recent Activity</h2>
+          <h2 className="text-xl font-semibold mb-4">Atividade Recente</h2>
           <div className="space-y-4">
-            <p className="text-gray-600">No recent activity to show.</p>
+            <p className="text-gray-600">Nenhuma atividade recente para mostrar.</p>
           </div>
         </Card>
       </div>
