@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
-import { Bot, Brain, Sparkles, ArrowRight, Check, BarChart2 } from "lucide-react";
+import { Bot, Brain, Sparkles, ArrowRight, Terminal, Code, Cpu, Network } from "lucide-react";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -29,133 +29,91 @@ const Landing = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      {/* Navbar */}
-      <nav className="border-b border-secondary/20 backdrop-blur-sm fixed w-full z-50">
-        <div className="container mx-auto flex items-center justify-between h-16 px-4">
-          <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            AI-Firm AutoTasks
-          </h1>
-          <Button onClick={() => navigate("/login")} variant="ghost">
-            Login
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-        </div>
-      </nav>
+    <div className="min-h-screen bg-[#1A1F2C] flex flex-col items-center justify-center relative overflow-hidden">
+      {/* Matrix-like rain effect */}
+      <div className="absolute inset-0 bg-[url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M/wHwAEBgIApD5fRAAAAABJRU5ErkJggg==')] opacity-50"></div>
+      
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1A1F2C]/80 via-[#8B5CF6]/20 to-[#0EA5E9]/20"></div>
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-background opacity-90 z-0" />
-        <img
-          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-          alt="Background"
-          className="absolute inset-0 w-full h-full object-cover -z-10"
-        />
-        
-        <div className="container mx-auto px-4 pt-24 z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <h1 className="text-6xl font-bold leading-tight bg-gradient-to-r from-emerald-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient bg-300%">
-                Revolucione sua Empresa com IA
-              </h1>
-              <p className="text-xl text-muted-foreground">
-                Automatize processos, aumente a produtividade e tome decisões mais inteligentes com nossa plataforma de IA.
-              </p>
-              <div className="flex gap-4">
-                <Button 
-                  onClick={() => navigate("/login")}
-                  className="group bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 hover:from-emerald-600 hover:via-blue-700 hover:to-purple-700"
-                >
-                  Começar Agora
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button variant="outline">Agendar Demo</Button>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          {/* Logo/Title Section */}
+          <div className="mb-12 space-y-4">
+            <h1 className="text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#8B5CF6] via-[#D946EF] to-[#0EA5E9] animate-gradient bg-300% mb-4">
+              AI-Firm AutoTasks
+            </h1>
+            <p className="text-xl text-[#E0E7FF] opacity-80">
+              Entre na Matrix da Automação Empresarial
+            </p>
+          </div>
+
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-2 gap-8 mb-12">
+            {/* Left Column - Features */}
+            <div className="space-y-6 text-left">
+              <div className="p-4 rounded-lg bg-[#1E293B]/50 backdrop-blur-sm border border-[#8B5CF6]/20 hover:border-[#8B5CF6]/40 transition-colors">
+                <Terminal className="w-8 h-8 text-[#D946EF] mb-2" />
+                <h3 className="text-lg font-semibold text-[#E0E7FF] mb-2">Automação Inteligente</h3>
+                <p className="text-sm text-[#E0E7FF]/70">
+                  Otimize seus processos com IA avançada
+                </p>
               </div>
 
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 pt-8">
-                {[
-                  { value: "98%", label: "Satisfação" },
-                  { value: "2x", label: "Produtividade" },
-                  { value: "-60%", label: "Custos" },
-                ].map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
-                  </div>
-                ))}
+              <div className="p-4 rounded-lg bg-[#1E293B]/50 backdrop-blur-sm border border-[#8B5CF6]/20 hover:border-[#8B5CF6]/40 transition-colors">
+                <Code className="w-8 h-8 text-[#0EA5E9] mb-2" />
+                <h3 className="text-lg font-semibold text-[#E0E7FF] mb-2">Integração Perfeita</h3>
+                <p className="text-sm text-[#E0E7FF]/70">
+                  Conecte-se com suas ferramentas favoritas
+                </p>
               </div>
             </div>
 
-            {/* Features Grid */}
-            <div className="grid gap-6">
-              {[
-                {
-                  icon: Bot,
-                  title: "Agentes IA Avançados",
-                  description: "Assistentes virtuais personalizados que aprendem com seu negócio",
-                },
-                {
-                  icon: Brain,
-                  title: "Automação Inteligente",
-                  description: "Otimize processos repetitivos com machine learning",
-                },
-                {
-                  icon: BarChart2,
-                  title: "Analytics em Tempo Real",
-                  description: "Dashboards intuitivos para monitoramento de KPIs",
-                },
-                {
-                  icon: Sparkles,
-                  title: "Integração Perfeita",
-                  description: "Conecte-se com suas ferramentas favoritas",
-                },
-              ].map((feature, index) => (
-                <div
-                  key={index}
-                  className="p-6 rounded-xl bg-secondary/50 backdrop-blur-sm border border-secondary/20 hover:bg-secondary/70 transition-colors"
+            {/* Right Column - Login Form */}
+            <div className="p-6 rounded-lg bg-[#1E293B]/50 backdrop-blur-sm border border-[#8B5CF6]/20">
+              <form onSubmit={handleLogin} className="space-y-4">
+                <h2 className="text-2xl font-bold text-[#E0E7FF] mb-6">Login</h2>
+                <Input
+                  placeholder="Usuário (Renato)"
+                  value={credentials.username}
+                  onChange={(e) => setCredentials(prev => ({ ...prev, username: e.target.value }))}
+                  className="bg-[#1A1F2C]/50 border-[#8B5CF6]/20 text-[#E0E7FF]"
+                />
+                <Input
+                  type="password"
+                  placeholder="Senha (entra)"
+                  value={credentials.password}
+                  onChange={(e) => setCredentials(prev => ({ ...prev, password: e.target.value }))}
+                  className="bg-[#1A1F2C]/50 border-[#8B5CF6]/20 text-[#E0E7FF]"
+                />
+                <Button 
+                  type="submit" 
+                  className="w-full bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] hover:from-[#7C3AED] hover:to-[#0284C7] text-white font-semibold"
                 >
-                  <feature.icon className="h-8 w-8 text-emerald-400 mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
+                  Entrar no Sistema
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </form>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Login Modal */}
-      <div 
-        className="fixed inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-50" 
-        style={{ display: window.location.pathname === "/login" ? "flex" : "none" }}
-      >
-        <div className="bg-secondary/50 p-8 rounded-xl border border-secondary/20 w-full max-w-md backdrop-blur-sm">
-          <h2 className="text-2xl font-bold mb-6">Login</h2>
-          <form onSubmit={handleLogin} className="space-y-4">
-            <div>
-              <Input
-                placeholder="Usuário (Renato)"
-                value={credentials.username}
-                onChange={(e) => setCredentials(prev => ({ ...prev, username: e.target.value }))}
-                className="bg-secondary/50"
-              />
-            </div>
-            <div>
-              <Input
-                type="password"
-                placeholder="Senha (entra)"
-                value={credentials.password}
-                onChange={(e) => setCredentials(prev => ({ ...prev, password: e.target.value }))}
-                className="bg-secondary/50"
-              />
-            </div>
-            <Button type="submit" className="w-full bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600">
-              Entrar
-            </Button>
-          </form>
+          {/* Bottom Stats */}
+          <div className="grid grid-cols-3 gap-8">
+            {[
+              { value: "99%", label: "Eficiência", icon: Cpu },
+              { value: "24/7", label: "Disponibilidade", icon: Network },
+              { value: "500+", label: "Automações", icon: Brain },
+            ].map((stat, index) => (
+              <div 
+                key={index}
+                className="p-4 rounded-lg bg-[#1E293B]/30 backdrop-blur-sm border border-[#8B5CF6]/20"
+              >
+                <stat.icon className="w-6 h-6 text-[#0EA5E9] mx-auto mb-2" />
+                <div className="text-2xl font-bold text-[#E0E7FF]">{stat.value}</div>
+                <div className="text-sm text-[#E0E7FF]/70">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
