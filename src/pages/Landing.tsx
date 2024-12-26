@@ -127,37 +127,6 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-24 bg-secondary/50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Por que escolher AI-Firm AutoTasks?</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Fácil de Usar",
-                description: "Interface intuitiva que não requer conhecimento técnico",
-              },
-              {
-                title: "Resultados Rápidos",
-                description: "Veja melhorias significativas em semanas, não meses",
-              },
-              {
-                title: "Suporte Premium",
-                description: "Equipe dedicada para ajudar em sua jornada",
-              },
-            ].map((benefit, index) => (
-              <div key={index} className="space-y-4">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Check className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold">{benefit.title}</h3>
-                <p className="text-muted-foreground">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Login Modal */}
       <div 
         className="fixed inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-50" 

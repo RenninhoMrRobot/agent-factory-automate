@@ -73,7 +73,7 @@ const Sidebar = () => {
   return (
     <div 
       className={cn(
-        "h-screen bg-secondary/50 backdrop-blur-sm p-4 flex flex-col border-r border-secondary transition-all duration-300",
+        "h-screen bg-secondary/50 backdrop-blur-sm p-4 flex flex-col border-r border-secondary transition-all duration-300 overflow-hidden",
         isCollapsed ? "w-20" : "w-64"
       )}
     >
@@ -103,7 +103,7 @@ const Sidebar = () => {
         </button>
       )}
 
-      <nav className="flex-1 overflow-y-auto">
+      <nav className="flex-1">
         <ul className="space-y-2">
           {menuItems.map((item) => {
             const isActive = location.pathname === item.path;
