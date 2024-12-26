@@ -53,11 +53,13 @@ const Agents = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-              <Input
-                placeholder="Buscar agentes..."
-                className="max-w-xs bg-secondary/50 border-secondary"
-                icon={<Search className="w-4 h-4 text-muted-foreground" />}
-              />
+              <div className="relative max-w-xs">
+                <Input
+                  placeholder="Buscar agentes..."
+                  className="bg-secondary/50 border-secondary pl-10"
+                />
+                <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 transform -translate-y-1/2" />
+              </div>
               <Button className="group flex items-center gap-3 bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 text-white hover:from-emerald-600 hover:via-blue-700 hover:to-purple-700">
                 <Plus className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
                 Novo Agente
